@@ -112,6 +112,8 @@ yarn build
 
 GitHub Actions 워크플로가 포함되어 있어 `main` 브랜치에 푸시하면 GitHub Pages 배포를 수행하도록 구성되어 있습니다.
 
+현재 빌드는 상대 경로 기반으로 생성되므로 GitHub Pages의 프로젝트 페이지(`https://<user>.github.io/<repo>/`)에서도 정적 자산 경로가 깨지지 않습니다.
+
 관련 파일:
 
 - `.github/workflows/deploy.yml`
