@@ -242,7 +242,6 @@ export class Roulette extends EventTarget {
     marble.startPrankDrain({ x: targetX, y: targetY });
     this.physics.removeMarble(marble.id);
     this._effects.push(new SkillEffect(marble.x, marble.y));
-    this.dispatchEvent(new CustomEvent('message', { detail: `PRANK MODE drained ${marble.name}` }));
   }
 
   private _rememberEliminated(marble: Marble) {
