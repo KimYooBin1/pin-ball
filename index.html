@@ -57,9 +57,7 @@
     return Math.max(window.roulette.getEligibleCount(), 0);
   }
 
-  function updatePrankNotice(names = getNames()) {
-    const first = names[0] ? (parseName(names[0])?.name || '-') : '-';
-    document.querySelector('#prankTargetName').textContent = first;
+  function updateControls() {
     document.querySelector('#in_winningRank').max = Math.max(getEligibleCount(), 1);
   }
 
@@ -81,7 +79,7 @@
   function getReady() {
     const names = getNames();
     window.roulette.setMarbles(names);
-    updatePrankNotice(names);
+    updateControls();
     ready = getEligibleCount() > 0;
     localStorage.setItem('mbr_names', names.join(','));
     switch (winnerType) {
@@ -146,7 +144,7 @@
         document.querySelector('#in_names').value = savedNames;
       }
     }
-    updatePrankNotice();
+    updateControls();
     document.querySelector('#in_names').addEventListener('input', () => {
       getReady();
     });
@@ -339,10 +337,6 @@
   <div class="left">
     <h3 data-trans>Enter names below</h3>
     <textarea id="in_names" placeholder="Input names separated by commas or line feed here" data-trans="placeholder">수박*2,키위*2,귤*2</textarea>
-    <p class="prank-summary">
-      <span data-trans>First entrant excluded:</span>
-      <strong id="prankTargetName">-</strong>
-    </p>
     <div class="actions">
       <a href='https://marblerouletteshop.com' target='_blank' id="btnShop" class='btn new' title='MarbleRoulette Shop'>
         <img src='assets/images/marblerouletteshop.png' />
