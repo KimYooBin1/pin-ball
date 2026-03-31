@@ -37,33 +37,6 @@ div.copyright a {
   color: var(--copyright-color);
 }
 
-.prank-badge {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  width: min(380px, calc(100vw - 2rem));
-  padding: 0.8rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 14px;
-  background: rgba(120, 10, 10, 0.78);
-  color: #fff;
-  backdrop-filter: blur(8px);
-
-  strong {
-    font-size: 15px;
-    letter-spacing: 0.08em;
-  }
-
-  span {
-    font-size: 12px;
-    line-height: 1.35;
-  }
-}
-
 .icon {
   background: currentColor;
   mask-repeat: no-repeat;
@@ -390,21 +363,6 @@ div.copyright a {
 }
 
 @media screen and (max-width: 750px) {
-  .prank-badge {
-    top: .5rem;
-    left: .5rem;
-    width: calc(100vw - 1rem);
-    padding: 0.65rem 0.8rem;
-
-    strong {
-      font-size: 13px;
-    }
-
-    span {
-      font-size: 11px;
-    }
-  }
-
   #settings {
     bottom: 60px;
     display: block;
