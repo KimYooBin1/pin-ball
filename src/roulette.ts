@@ -246,6 +246,9 @@ export class Roulette extends EventTarget {
   }
 
   private _rememberEliminated(marble: Marble) {
+    if (marble.isPrankTarget) {
+      return;
+    }
     if (!this._eliminatedMarbles.includes(marble)) {
       this._eliminatedMarbles.push(marble);
     }
